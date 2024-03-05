@@ -44,6 +44,20 @@ body {
   font-style: normal;
 }
 
+h2,
+h3 {
+  text-align: center;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,6 +68,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #fff;
   padding-left: 40px;
   padding-right: 40px;
   width: 100%;
@@ -76,6 +91,14 @@ nav .nav-menu {
   display: flex;
   gap: 25px;
   font-size: 26px;
+}
+nav .nav-menu-element {
+  cursor: pointer;
+  -webkit-transition: 0.3s color ease-in-out;
+  transition: 0.3s color ease-in-out;
+}
+nav .nav-menu-element:hover {
+  color: #2eb4ea;
 }
 nav .nav-search {
   font-size: 35px;
@@ -111,4 +134,59 @@ main .enter-text p {
 }
 main .enter-img {
   border-radius: 10px;
+}
+main .biography-education {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+main .biography-education-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+main .biography-education-data-img {
+  border-radius: 10px;
+}
+main .biography-education-data-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  font-size: 26px;
+}
+main .biography-family {
+  margin-bottom: 30px;
+}
+main .biography-family-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+main .biography-family-data-img {
+  border-radius: 10px;
+}
+main .biography-family-data-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  font-size: 26px;
 }
