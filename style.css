@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 html {
   -webkit-box-sizing: border-box;
@@ -19,17 +20,10 @@ h3,
 h4,
 h5,
 h6,
-p,
-ol,
-ul {
+p {
   margin: 0;
   padding: 0;
   font-weight: normal;
-}
-
-ol,
-ul {
-  list-style: none;
 }
 
 img {
@@ -44,6 +38,20 @@ body {
   font-style: normal;
 }
 
+h2,
+h3 {
+  text-align: center;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,23 +62,176 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #fff;
   padding-left: 40px;
   padding-right: 40px;
   width: 100%;
-  height: 80px;
+  height: 100px;
   border-bottom: solid 1px rgba(183, 183, 183, 0.5294117647);
 }
 nav .nav-logo {
-  font-size: 29px;
+  font-size: 36px;
   font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+nav .nav-logo:hover {
+  color: #2eb4ea;
 }
 nav .nav-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 16px;
-  font-size: 21px;
+  gap: 25px;
+  font-size: 26px;
+}
+nav .nav-menu-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav .nav-menu-block .nav-menu-hint {
+  position: absolute;
+  margin-top: 40px;
+  width: 124px;
+  height: 55px;
+  background-color: #fff;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 20px 2px rgba(47, 122, 235, 0.3137254902);
+          box-shadow: 0 2px 20px 2px rgba(47, 122, 235, 0.3137254902); /* добавляем тень */
+}
+nav .nav-menu-block .nav-menu-hint::before {
+  content: "";
+  position: absolute;
+  top: -19px;
+  left: calc(50% - 10px);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+nav .nav-menu-block .nav-menu-hint ul {
+  margin: 0;
+  padding-left: 30px;
+  font-size: 20px;
+  margin-top: 2px;
+}
+nav .nav-menu-block .nav-menu-hint ul li {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+nav .nav-menu-block .nav-menu-hint ul li:hover {
+  color: #2eb4ea;
+}
+nav .nav-menu-element {
+  cursor: pointer;
+  -webkit-transition: 0.3s color ease-in-out;
+  transition: 0.3s color ease-in-out;
+}
+nav .nav-menu-element:hover {
+  color: #2eb4ea;
 }
 nav .nav-search {
   font-size: 35px;
+  cursor: pointer;
+}
+
+main {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 30px;
+}
+main .enter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 200px;
+  margin-bottom: 100px;
+}
+main .enter-text h1 {
+  font-weight: 500;
+  font-size: 40px;
+}
+main .enter-text h1 span {
+  font-weight: normal;
+  font-size: 36px;
+}
+main .enter-text p {
+  font-size: 26px;
+  padding-top: 25px;
+}
+main .enter-img {
+  border-radius: 10px;
+}
+main .biography-education {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+main .biography-education-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+main .biography-education-data-img {
+  border-radius: 10px;
+}
+main .biography-education-data-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  font-size: 26px;
+}
+main .biography-family {
+  margin-bottom: 30px;
+}
+main .biography-family-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+main .biography-family-data-img {
+  border-radius: 10px;
+}
+main .biography-family-data-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  font-size: 26px;
 }

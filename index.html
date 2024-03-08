@@ -17,11 +17,104 @@
     <nav>
       <span class="nav-logo">ХЛ №55</span>
       <div class="nav-menu">
-        <span>Біографія</span>
-        <span>Винаходи</span>
-        <span>Премії</span>
+        <div class="nav-menu-block">
+          <span class="nav-menu-element" id="navBiography">Біографія</span>
+          <div
+            class="nav-menu-hint"
+            id="hint"
+            style="opacity: 0%; visibility: hidden"
+          >
+            <ul>
+              <li id="navBiographyEducation">Освіта</li>
+              <li id="navBiographyFamily">Родина</li>
+            </ul>
+          </div>
+        </div>
+        <span class="nav-menu-element">Винаходи</span>
+        <span class="nav-menu-element">Премії</span>
       </div>
       <i class="fa-solid fa-magnifying-glass nav-search"></i>
     </nav>
+    <main>
+      <div class="enter">
+        <div class="enter-text">
+          <h1>
+            “Життя в ім'я науки й України” <span
+              >(з нагоди 180-річчя із дня народження Івана Пулюя, видатного
+              фізика та електротехніка України)</span
+            >
+          </h1>
+          <p>
+            Іван Пулюя (1845-1918) - український та австро-угорський фізик та
+            електротехнік, організатор науки, громадський діяч. Відомий
+            піонерськими роботами з дослідження катодних променів
+          </p>
+        </div>
+        <img
+          src="./assets/img/enter.png"
+          alt="Іван Пулюя enter"
+          class="enter-img"
+        />
+      </div>
+      <div class="biography">
+        <h2 id="biographyTitle">Біографія</h2>
+        <div class="biography-education">
+          <h3 id="biographyEducationTitle">Освіта</h3>
+          <div class="biography-education-data">
+            <img
+              src="assets/img/biography-education.png"
+              alt="Іван Пулюя biography education"
+              class="biography-education-data-img"
+            />
+            <div class="biography-education-data-text">
+              <p>
+                Початкову школу закінчив у Гримайлові й вступив до
+                Тернопільської класичної гімназії, де разом із братами
+                Олександром та Володимиром Барвінськими став співзасновником та
+                активним діячем таємного товариства української молоді
+                «Громада».
+              </p>
+              <p>
+                Після закінчення гімназії 1865 р. Пулюй був уже сформованою
+                особистістю, патріотом, який твердо знав мету свого життя й
+                розумів, що має робити для її досягнення.
+              </p>
+              <p>
+                У 1874—1875 рр. викладав фізику, механіку та математику у
+                Військово-морській академії в місті Фіуме. Там сконструював
+                прилад для вимірювання механічного еквівалента теплоти, який
+                став широко відомим у науковому світі й у 1878 р. був
+                відзначений срібною медаллю на Всесвітній виставці в Парижі. 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="biography-family">
+          <h3 id="biographyFamilyTitle">Родина</h3>
+          <div class="biography-family-data">
+            <div class="biography-family-data-text">
+              <p>
+                1884 року Пулюй одружився з Катериною-Йосифою-Марією Стозіцькою
+                (1863—1945) — студенткою Віденського університету.
+              </p>
+              <p>
+                У сім'ї виросло шестеро дітей, три доньки і три сини: Наталка
+                (1886 р. н.) стала піаністкою і дружиною відомого українського
+                композитора Василя Барвінського; Ольга (1891 р. н.) і Марія
+                (1894 р. н.) стали вчительками; Олександр (1901-1984) і Юрій
+                (Ґеорґ, 1906 р. н.) здобули інженерний фах, а Павло (1904 р. н.)
+                став лікарем.
+              </p>
+            </div>
+            <img
+              src="assets/img/biography-family.png"
+              alt="Іван Пулюя biography family"
+              class="biography-family-data-img"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
   </body>
 </html>
