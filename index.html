@@ -17,7 +17,19 @@
     <nav>
       <span class="nav-logo">ХЛ №55</span>
       <div class="nav-menu">
-        <span class="nav-menu-element" id="navBiography">Біографія</span>
+        <div class="nav-menu-block">
+          <span class="nav-menu-element" id="navBiography">Біографія</span>
+          <div
+            class="nav-menu-hint"
+            id="hint"
+            style="opacity: 0%; visibility: hidden"
+          >
+            <ul>
+              <li id="navBiographyEducation">Освіта</li>
+              <li id="navBiographyFamily">Родина</li>
+            </ul>
+          </div>
+        </div>
         <span class="nav-menu-element">Винаходи</span>
         <span class="nav-menu-element">Премії</span>
       </div>
@@ -47,7 +59,7 @@
       <div class="biography">
         <h2 id="biographyTitle">Біографія</h2>
         <div class="biography-education">
-          <h3>Освіта</h3>
+          <h3 id="biographyEducationTitle">Освіта</h3>
           <div class="biography-education-data">
             <img
               src="assets/img/biography-education.png"
@@ -78,7 +90,7 @@
           </div>
         </div>
         <div class="biography-family">
-          <h3>Родина</h3>
+          <h3 id="biographyFamilyTitle">Родина</h3>
           <div class="biography-family-data">
             <div class="biography-family-data-text">
               <p>

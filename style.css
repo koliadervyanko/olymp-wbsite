@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 html {
   -webkit-box-sizing: border-box;
@@ -19,17 +20,10 @@ h3,
 h4,
 h5,
 h6,
-p,
-ol,
-ul {
+p {
   margin: 0;
   padding: 0;
   font-weight: normal;
-}
-
-ol,
-ul {
-  list-style: none;
 }
 
 img {
@@ -91,6 +85,57 @@ nav .nav-menu {
   display: flex;
   gap: 25px;
   font-size: 26px;
+}
+nav .nav-menu-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav .nav-menu-block .nav-menu-hint {
+  position: absolute;
+  margin-top: 40px;
+  width: 124px;
+  height: 55px;
+  background-color: #fff;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 20px 2px rgba(47, 122, 235, 0.3137254902);
+          box-shadow: 0 2px 20px 2px rgba(47, 122, 235, 0.3137254902); /* добавляем тень */
+}
+nav .nav-menu-block .nav-menu-hint::before {
+  content: "";
+  position: absolute;
+  top: -19px;
+  left: calc(50% - 10px);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+nav .nav-menu-block .nav-menu-hint ul {
+  margin: 0;
+  padding-left: 30px;
+  font-size: 20px;
+  margin-top: 2px;
+}
+nav .nav-menu-block .nav-menu-hint ul li {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+nav .nav-menu-block .nav-menu-hint ul li:hover {
+  color: #2eb4ea;
 }
 nav .nav-menu-element {
   cursor: pointer;
