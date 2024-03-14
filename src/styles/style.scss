@@ -20,6 +20,7 @@ nav {
       color: #2eb4ea;
     }
   }
+  user-select: none;
   .nav-menu {
     display: flex;
     gap: 25px;
@@ -69,12 +70,18 @@ nav {
       transition: 0.3s color ease-in-out;
       &:hover {
         color: #2eb4ea;
+        &:hover {
+          color: #2eb4ea;
+        }
       }
     }
-  }
-  .nav-search {
-    font-size: 35px;
-    cursor: pointer;
+    .nav-search {
+      font-size: 35px;
+      cursor: pointer;
+      &:hover {
+        color: #2eb4ea;
+      }
+    }
   }
 }
 
@@ -171,6 +178,7 @@ main {
           font-weight: 500;
         }
         ul {
+          margin-top: 20px;
           li {
             font-size: 24px;
             margin-left: 30px;
