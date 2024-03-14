@@ -8,6 +8,7 @@ const navBiographyEducation = document.getElementById("navBiographyEducation");
 const navBiographyFamily = document.getElementById("navBiographyFamily");
 const biographyFamilyTitle = document.getElementById("biographyFamilyTitle");
 
+// functions
 const hideHint = () => {
   hint.style.opacity = "0%";
   setTimeout(() => {
@@ -20,11 +21,22 @@ const scrollToElem = (element, offset) => {
   const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
   window.scrollTo({ top: y, behavior: "smooth" });
 };
+////////////////////////////////////////////////////////////
 
+// scroll to
 navBiography.addEventListener("click", () => {
   scrollToElem(biographyTitle, 20);
 });
 
+navBiographyEducation.addEventListener("click", () => {
+  scrollToElem(biographyEducationTitle, 10);
+});
+
+navBiographyFamily.addEventListener("click", () => {
+  scrollToElem(biographyFamilyTitle, 10);
+});
+
+// show or hide elem on hover
 navBiography.addEventListener("mouseenter", () => {
   hint.style.opacity = "100%";
   hint.style.visibility = "visible";
@@ -39,12 +51,4 @@ hint.addEventListener("mouseleave", () => {
   if (!navBiography.matches(":hover")) {
     hideHint();
   }
-});
-
-navBiographyEducation.addEventListener("click", () => {
-  scrollToElem(biographyEducationTitle, 10);
-});
-
-navBiographyFamily.addEventListener("click", () => {
-  scrollToElem(biographyFamilyTitle, 10);
 });
