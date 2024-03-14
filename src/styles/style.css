@@ -20,7 +20,9 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul,
+ol {
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -289,4 +291,31 @@ main .inventions-data-img img {
   width: 279px;
   height: 256px;
   margin-top: 20px;
+}
+main .awards {
+  margin-bottom: 100px;
+}
+main .awards-data {
+  margin-top: 30px;
+}
+main .awards-data-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+main .awards-data-publication {
+  margin-top: 60px;
+}
+main .awards-data-publication h4 {
+  font-size: 32px;
+  font-weight: 500;
+}
+main .awards-data-publication ul li {
+  font-size: 24px;
+  margin-left: 30px;
 }

@@ -155,4 +155,28 @@ main {
       }
     }
   }
+  .awards {
+    margin-bottom: 100px;
+    &-data {
+      margin-top: 30px;
+      &-main {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      &-publication {
+        margin-top: 60px;
+        h4 {
+          font-size: 32px;
+          font-weight: 500;
+        }
+        ul {
+          li {
+            font-size: 24px;
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
 }
