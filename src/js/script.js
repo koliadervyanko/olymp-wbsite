@@ -7,6 +7,8 @@ const hint = document.getElementById("hint");
 const navBiographyEducation = document.getElementById("navBiographyEducation");
 const navBiographyFamily = document.getElementById("navBiographyFamily");
 const biographyFamilyTitle = document.getElementById("biographyFamilyTitle");
+const inventionsTitle = document.getElementById("inventionsTitle");
+const navInventions = document.getElementById("navInventions");
 
 // functions
 const hideHint = () => {
@@ -35,6 +37,12 @@ navBiographyEducation.addEventListener("click", () => {
 navBiographyFamily.addEventListener("click", () => {
   scrollToElem(biographyFamilyTitle, 10);
 });
+
+navInventions.addEventListener("click", () => {
+  scrollToElem(inventionsTitle, 10);
+});
+
+////////////////////////////////////////////////////////////
 
 // show or hide elem on hover
 navBiography.addEventListener("mouseenter", () => {
