@@ -20,7 +20,9 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul,
+ol {
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -52,6 +54,10 @@ h3 {
   font-size: 32px;
 }
 
+p {
+  font-size: 26px;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,6 +74,10 @@ nav {
   width: 100%;
   height: 100px;
   border-bottom: solid 1px rgba(183, 183, 183, 0.5294117647);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 nav .nav-logo {
   font-size: 36px;
@@ -145,9 +155,15 @@ nav .nav-menu-element {
 nav .nav-menu-element:hover {
   color: #2eb4ea;
 }
-nav .nav-search {
+nav .nav-menu-element:hover:hover {
+  color: #2eb4ea;
+}
+nav .nav-menu .nav-search {
   font-size: 35px;
   cursor: pointer;
+}
+nav .nav-menu .nav-search:hover {
+  color: #2eb4ea;
 }
 
 main {
@@ -206,7 +222,6 @@ main .biography-education-data-text {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
-  font-size: 26px;
 }
 main .biography-family {
   margin-bottom: 30px;
@@ -233,5 +248,87 @@ main .biography-family-data-text {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
+}
+main .inventions {
+  margin-bottom: 100px;
+}
+main .inventions-data {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main .inventions-data-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 70%;
+}
+main .inventions-data-img {
+  width: 370px;
+  height: 402px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main .inventions-data-img span {
+  text-align: center;
+  margin-top: 10px;
   font-size: 26px;
+  font-style: italic;
+}
+main .inventions-data-img img {
+  border-radius: 10px;
+  width: 279px;
+  height: 256px;
+  margin-top: 20px;
+}
+main .awards {
+  margin-bottom: 100px;
+}
+main .awards-data {
+  margin-top: 30px;
+}
+main .awards-data-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+main .awards-data-publication {
+  margin-top: 60px;
+}
+main .awards-data-publication h4 {
+  font-size: 32px;
+  font-weight: 500;
+}
+main .awards-data-publication ul {
+  margin-top: 20px;
+}
+main .awards-data-publication ul li {
+  font-size: 24px;
+  margin-left: 30px;
 }

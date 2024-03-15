@@ -19,17 +19,10 @@ h3,
 h4,
 h5,
 h6,
-p,
-ol,
-ul {
+p {
   margin: 0;
   padding: 0;
   font-weight: normal;
-}
-
-ol,
-ul {
-  list-style: none;
 }
 
 img {
@@ -42,4 +35,22 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+h2,
+h3 {
+  text-align: center;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+p {
+  font-size: 26px;
 }

@@ -1,4 +1,4 @@
-@import "settings.scss";
+@import "global.scss";
 @import "mixin.scss";
 
 // nav
@@ -20,6 +20,7 @@ nav {
       color: #2eb4ea;
     }
   }
+  user-select: none;
   .nav-menu {
     display: flex;
     gap: 25px;
@@ -69,12 +70,18 @@ nav {
       transition: 0.3s color ease-in-out;
       &:hover {
         color: #2eb4ea;
+        &:hover {
+          color: #2eb4ea;
+        }
       }
     }
-  }
-  .nav-search {
-    font-size: 35px;
-    cursor: pointer;
+    .nav-search {
+      font-size: 35px;
+      cursor: pointer;
+      &:hover {
+        color: #2eb4ea;
+      }
+    }
   }
 }
 
@@ -116,6 +123,68 @@ main {
     }
     &-family {
       @include biographySection();
+    }
+  }
+  .inventions {
+    margin-bottom: 100px;
+    &-data {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 70%;
+      }
+      &-img {
+        width: 370px;
+        height: 402px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        span {
+          text-align: center;
+          margin-top: 10px;
+          font-size: 26px;
+          font-style: italic;
+        }
+        img {
+          border-radius: 10px;
+          width: 279px;
+          height: 256px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .awards {
+    margin-bottom: 100px;
+    &-data {
+      margin-top: 30px;
+      &-main {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      &-publication {
+        margin-top: 60px;
+        h4 {
+          font-size: 32px;
+          font-weight: 500;
+        }
+        ul {
+          margin-top: 20px;
+          li {
+            font-size: 24px;
+            margin-left: 30px;
+          }
+        }
+      }
     }
   }
 }

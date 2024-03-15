@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/styles/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -30,8 +30,8 @@
             </ul>
           </div>
         </div>
-        <span class="nav-menu-element">Винаходи</span>
-        <span class="nav-menu-element">Премії</span>
+        <span class="nav-menu-element" id="navInventions">Винаходи</span>
+        <span class="nav-menu-element" id="navAwards">Премії</span>
       </div>
       <i class="fa-solid fa-magnifying-glass nav-search"></i>
     </nav>
@@ -51,7 +51,7 @@
           </p>
         </div>
         <img
-          src="./assets/img/enter.png"
+          src="src/assets/img/enter.png"
           alt="Іван Пулюя enter"
           class="enter-img"
         />
@@ -62,7 +62,7 @@
           <h3 id="biographyEducationTitle">Освіта</h3>
           <div class="biography-education-data">
             <img
-              src="assets/img/biography-education.png"
+              src="src/assets/img/biography-education.png"
               alt="Іван Пулюя biography education"
               class="biography-education-data-img"
             />
@@ -107,14 +107,100 @@
               </p>
             </div>
             <img
-              src="assets/img/biography-family.png"
+              src="src/assets/img/biography-family.png"
               alt="Іван Пулюя biography family"
               class="biography-family-data-img"
             />
           </div>
         </div>
       </div>
+      <div class="inventions">
+        <h2 id="inventionsTitle">Винаходи</h2>
+        <div class="inventions-data">
+          <p>
+            У 1880 році Пулюй виявив, що певні кристали, зокрема кварц, здатні
+            генерувати електричний заряд під дією механічного напруження. Цей
+            ефект мав велике значення для розвитку технологій ультразвукової
+            техніки, акустики, медичних діагностичних засобів та інших галузей.
+          </p>
+          <div style="display: flex; justify-content: space-between">
+            <div class="inventions-data-text">
+              <p>
+                Пулюй також вніс важливий внесок у розвиток рентгенівських
+                технологій. У 1896 році він опублікував статтю про відкриття
+                рентгенівських променів, які він назвав "рентгенівськими". Це
+                відкриття відкрило нову еру у медицині, дозволяючи лікарям
+                діагностувати та лікувати хвороби шляхом невідомого раніше
+                зображення внутрішніх органів людини.
+              </p>
+              <p>
+                Пулюй також працював над вдосконаленням інших технологій,
+                включаючи електричне освітлення та винахід першого електричного
+                підйомника для людей з обмеженими можливостями.
+              </p>
+            </div>
+            <div class="inventions-data-img">
+              <img
+                src="src/assets/img/inventions.png"
+                alt="inventions-data-img"
+              />
+              <span>Рука доньки дослідника Наталі (1896).</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="awards">
+        <h2 id="awardsTitle">Премії</h2>
+        <div class="awards-data">
+          <div class="awards-data-main">
+            <p>
+              Автор близько 50 наукових праць українською, німецькою,
+              англійською мовами.
+            </p>
+            <p>
+              У 1902 р. він заснував та очолив катедру електротехніки. З нагоди
+              100-літнього ювілею Німецької політехніки в Празі Пулюя
+              відзначили орденом Залізної корони ІІІ ступеня за його наукову та
+              викладацьку працю (1906). Він отримав також хрест ордена
+              Франца-Йосифа і високий титул Радника двору (1910).
+            </p>
+          </div>
+          <div class="awards-data-publication">
+            <h4>Публікації про катодні та Х-промен</h4>
+            <ul>
+              <li>
+                Strahlende Elektrodenmaterie // Wiener Berichte I. — 1880. —
+                81. — S.864—923; II. — 1881. — 83. — S.402—420; III. 1881. —
+                83. — S.693—708; IV. — 1882. — 85. — S.871—881.
+              </li>
+              <li>
+                Strahlende Elektrodenmaterie und der sogenannte
+                Aggregatzustand' — Wien; Verlag Carl Gerold Sohn, 1883.
+              </li>
+              <li>
+                Radiant Elektrode Matter and the so Called Fourth State.—
+                London: Physical Memoirs, 1889. — Vol. l, Pt.2. — P.233—331.
+              </li>
+              <li>
+                Über die Entstehung der Röntgen'schen Strahlen und ihre
+                photographische Wirkung // Wiener Berichte. — 1896. — Bd. 105. —
+                S. 228—238.
+              </li>
+              <li>
+                Nachtrag zur Abhandlung: Uber die Entstehung der Röntgen'schen
+                Strahlen und ihre photographische Wirkung // Wiener Berichte. —
+                1896. — Bd. 105. — S. 243—245.
+              </li>
+              <li>
+                Іван Пулюй. Збірник праць / за ред. В. Шендеровського. — Київ,
+                1996. — 712 с.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
-    <script src="script.js"></script>
+    <script type="module" src="src/js/functions.js"></script>
+    <script type="module" src="src/js/script.js"></script>
   </body>
 </html>
