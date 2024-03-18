@@ -118,12 +118,16 @@ navSearchInput.addEventListener("input", () => {
         if (spans.length) {
           if (selected === spans.length) {
             // clear highlight
-            clearSelectedHighlight();
+            const hightLightSpan = document.querySelector(".selectedHighlight");
+            hightLightSpan.classList.remove("selectedHighlight");
+            hightLightSpan.style.backgroundColor = "";
             selected = 1;
             setFirstSelected(selected, spans, true);
           } else {
             // clear highlight
-            clearSelectedHighlight();
+            const hightLightSpan = document.querySelector(".selectedHighlight");
+            hightLightSpan.classList.remove("selectedHighlight");
+            hightLightSpan.style.backgroundColor = "";
             selected += 1;
             if (selected >= 10) {
               document.getElementById("navSearchBlock").style.display = "flex";
