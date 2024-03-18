@@ -1,5 +1,11 @@
 // todo: on click on search icon
-import { hideHint, setCount } from "./functions.js";
+import {
+  clearSelectedHighlight,
+  hideHint,
+  setCount,
+  setFirstSelected,
+  setSelected,
+} from "./functions.js";
 import { scrollToElem } from "./functions.js";
 const navBiography = document.getElementById("navBiography");
 const body = document.querySelector("body");
@@ -82,7 +88,7 @@ navSearchInput.addEventListener("input", () => {
     created = true;
     setTimeout(() => {
       let actHtml = `<div class="nav-search-menu" style="opacity: 0%" id="arrows">
-      <p id="count">${elements.length ? selected : "0"}/${elements.length}</p>
+      <p id="count">${spans.length ? selected : "0"}/${spans.length}</p>
       <div class="nav-search-menu-arrows">
         <i class="fa-solid fa-chevron-up" id="arrowUp"></i>
         <i class="fa-solid fa-chevron-down" id="arrowDown"></i>
@@ -102,22 +108,16 @@ navSearchInput.addEventListener("input", () => {
   }
   // change count
   if (created) {
-    setCount(selected, elements);
+    setCount(selected, spans);
   }
   // set first element
-  for (let i = 0; i < elements.length; i++) {
-    if (i === selected - 1) {
-      const hightLightSpan = elements[i].querySelector(".highlight");
-      hightLightSpan.classList.add("selectedHighlight");
-      hightLightSpan.style.backgroundColor = "orange";
-    }
-  }
-  //!
+  setFirstSelected(selected, spans, false);
   setTimeout(() => {
     if (created) {
       arrowDown.addEventListener("click", () => {
-        if (elements.length) {
-          if (selected === elements.length) {
+        if (spans.length) {
+          // todo
+          if (selected === spans.length) {
             // clear highlight
             const highlighted = document.querySelector(".selectedHighlight");
             if (highlighted) {
@@ -125,16 +125,7 @@ navSearchInput.addEventListener("input", () => {
               highlighted.style.backgroundColor = "";
             }
             selected = 1;
-            setCount(selected, elements);
-            // todo: refactor
-            for (let i = 0; i < elements.length; i++) {
-              if (i === selected - 1) {
-                const hightLightSpan = elements[i].querySelector(".highlight");
-                hightLightSpan.classList.add("selectedHighlight");
-                hightLightSpan.style.backgroundColor = "orange";
-                scrollToElem(hightLightSpan, 15);
-              }
-            }
+            setFirstSelected(selected, spans, true);
           } else {
             // clear highlight
             const highlighted = document.querySelector(".selectedHighlight");
@@ -145,60 +136,41 @@ navSearchInput.addEventListener("input", () => {
 
             selected += 1;
             // use selected - 1 because array counts from 0
-            const currentElement = elements[selected - 1];
-            if (currentElement) {
-              setCount(selected, elements);
+            const currentElementSpan = spans[selected - 1];
+            if (currentElementSpan) {
+              setCount(selected, spans);
 
-              const hightLightSpan = currentElement.querySelector(".highlight");
-              if (hightLightSpan) {
-                hightLightSpan.classList.add("selectedHighlight");
-                hightLightSpan.style.backgroundColor = "orange";
-              }
+              currentElementSpan.classList.add("selectedHighlight");
+              currentElementSpan.style.backgroundColor = "orange";
 
-              scrollToElem(currentElement, 15);
+              scrollToElem(currentElementSpan, 15);
             }
           }
         }
       });
       arrowUp.addEventListener("click", () => {
-        if (elements.length <= selected + 1) {
-          // todo
+        if (spans.length) {
           if (selected === 1) {
-            selected = elements.length;
-            setCount(selected, elements);
+            selected = spans.length;
+            setCount(selected, spans);
             // set last element
-            const lastElement = elements[elements.length - 1];
-            const highlighted = document.querySelector(".selectedHighlight");
-            if (highlighted) {
-              highlighted.classList.remove("selectedHighlight");
-              highlighted.style.backgroundColor = "";
-            }
-            const lastElementSpan = lastElement.querySelector(".highlight");
+            const lastElementSpan = spans[spans.length - 1];
+            // todo
+            clearSelectedHighlight();
             if (lastElementSpan) {
-              lastElementSpan.classList.add("selectedHighlight");
-              lastElementSpan.style.backgroundColor = "orange";
+              setSelected(lastElementSpan);
             }
-            scrollToElem(lastElement, 15);
+            scrollToElem(lastElementSpan, 15);
           } else {
             // *clear highlight
-            const highlighted = document.querySelector(".selectedHighlight");
-            if (highlighted) {
-              highlighted.classList.remove("selectedHighlight");
-              highlighted.style.backgroundColor = "";
-            }
+            clearSelectedHighlight();
             selected -= 1;
             // use selected - 1 because array counts from 0
-            const currentElement = elements[selected - 1];
-            if (currentElement) {
-              setCount(selected, elements);
-
-              const hightLightSpan = currentElement.querySelector(".highlight");
-              if (hightLightSpan) {
-                hightLightSpan.classList.add("selectedHighlight");
-                hightLightSpan.style.backgroundColor = "orange";
-              }
-
-              scrollToElem(currentElement, 15);
+            const currentElementSpan = spans[selected - 1];
+            if (currentElementSpan) {
+              setCount(selected, spans);
+              setSelected(currentElementSpan);
+              scrollToElem(currentElementSpan, 15);
             }
           }
         }
