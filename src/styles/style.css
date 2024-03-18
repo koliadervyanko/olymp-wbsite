@@ -58,13 +58,14 @@ p {
   font-size: 26px;
 }
 
+.highlight {
+  background-color: yellow;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -158,12 +159,109 @@ nav .nav-menu-element:hover {
 nav .nav-menu-element:hover:hover {
   color: #2eb4ea;
 }
-nav .nav-menu .nav-search {
-  font-size: 35px;
-  cursor: pointer;
+nav .nav-search {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }
-nav .nav-menu .nav-search:hover {
+nav .nav-search i {
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-transition: color ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s;
+}
+nav .nav-search i:hover {
   color: #2eb4ea;
+}
+nav .nav-search input {
+  width: 270px;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.1882352941);
+  border-radius: 20px;
+  font-size: 20px;
+  padding-left: 12px;
+  height: 40px;
+}
+nav .nav-search input:focus {
+  outline: 0;
+}
+nav .nav-search-menu {
+  opacity: 0;
+  -webkit-transition: 0.4s opacity ease-in-out;
+  transition: 0.4s opacity ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav .nav-search-menu p {
+  font-weight: 400;
+  font-size: 20px;
+}
+nav .nav-search-menu-arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+nav .nav-search-menu-arrows i {
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: color ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s;
+}
+nav .nav-search-menu-arrows i:hover {
+  color: #2eb4ea;
+}
+
+.up-btn {
+  width: 60px;
+  height: 60px;
+  right: 50px;
+  position: fixed;
+  bottom: 50px;
+  background-color: #f8f8f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  border-radius: 100%;
+  color: #777777;
+  border: 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.2509803922);
+          box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.2509803922);
+}
+.up-btn:hover {
+  -webkit-box-shadow: 0 2px 25px 4px rgba(0, 0, 0, 0.2509803922);
+          box-shadow: 0 2px 25px 4px rgba(0, 0, 0, 0.2509803922);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  color: #5e5e5e;
+  background-color: #dfdfdf;
 }
 
 main {
@@ -185,7 +283,7 @@ main .enter-text h1 {
   font-weight: 500;
   font-size: 40px;
 }
-main .enter-text h1 span {
+main .enter-text span {
   font-weight: normal;
   font-size: 36px;
 }

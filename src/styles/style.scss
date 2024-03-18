@@ -1,10 +1,14 @@
 @import "global.scss";
 @import "mixin.scss";
+@import "variables.scss";
+
+.selectedHighlight {
+  background-color: orange;
+}
 
 // nav
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background: #fff;
   @include paddingX(40px);
@@ -37,7 +41,7 @@ nav {
         background-color: #fff;
         transition: opacity 0.3s ease-in-out;
         border-radius: 3px;
-        box-shadow: 0 2px 20px 2px #2f7aeb50; /* добавляем тень */
+        box-shadow: 0 2px 20px 2px #2f7aeb50;
         &::before {
           content: "";
           position: absolute;
@@ -45,7 +49,6 @@ nav {
           left: calc(50% - 10px);
           border-width: 10px;
 
-          // width: 124px;
           border-style: solid;
           border-color: transparent transparent #fff transparent;
         }
@@ -75,13 +78,83 @@ nav {
         }
       }
     }
-    .nav-search {
-      font-size: 35px;
+  }
+
+  .nav-search {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    i {
+      font-size: 24px;
       cursor: pointer;
+      transition: color ease-in-out 0.3s;
       &:hover {
         color: #2eb4ea;
       }
     }
+    input {
+      width: 270px;
+      transition: width 0.3s ease-in-out;
+      border: 1px solid #00000030;
+      border-radius: 20px;
+      font-size: 20px;
+      padding-left: 12px;
+      height: 40px;
+      &:focus {
+        outline: 0;
+      }
+    }
+    &-menu {
+      opacity: 0;
+      transition: 0.4s opacity ease-in-out;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      p {
+        font-weight: 400;
+        font-size: 20px;
+      }
+      &-arrows {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        i {
+          font-size: 20px;
+          cursor: pointer;
+
+          transition: color ease-in-out 0.3s;
+          &:hover {
+            color: #2eb4ea;
+          }
+        }
+      }
+    }
+  }
+}
+
+.up-btn {
+  width: $upBtnSize;
+  height: $upBtnSize;
+  right: 50px;
+  position: fixed;
+  bottom: 50px;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 100%;
+  color: #777777;
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 2px 20px 2px #00000040;
+  &:hover {
+    box-shadow: 0 2px 25px 4px #00000040;
+    transition: 0.3s ease-in-out;
+    color: darken($color: #777777, $amount: 10);
+    background-color: darken($color: #f8f8f8, $amount: 10);
   }
 }
 
@@ -100,10 +173,10 @@ main {
       h1 {
         font-weight: 500;
         font-size: 40px;
-        span {
-          font-weight: normal;
-          font-size: 36px;
-        }
+      }
+      span {
+        font-weight: normal;
+        font-size: 36px;
       }
       p {
         font-size: 26px;
