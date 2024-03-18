@@ -10,3 +10,12 @@ export const scrollToElem = (element, offset) => {
   const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
   window.scrollTo({ top: y, behavior: "smooth" });
 };
+
+export const setCount = (selected, elements) => {
+  setTimeout(() => {
+    const count = document.getElementById("count");
+    count.textContent = `${elements.length ? selected : "0"}/${
+      elements.length
+    }`;
+  }, 300);
+};

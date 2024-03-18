@@ -14,9 +14,9 @@
     />
   </head>
   <body>
-    <nav>
-      <span class="nav-logo">ХЛ №55</span>
-      <div class="nav-menu">
+    <nav style="justify-content: space-between">
+      <span class="nav-logo" id="logo">ХЛ №55</span>
+      <div class="nav-menu" id="navMenu">
         <div class="nav-menu-block">
           <span class="nav-menu-element" id="navBiography">Біографія</span>
           <div
@@ -33,17 +33,28 @@
         <span class="nav-menu-element" id="navInventions">Винаходи</span>
         <span class="nav-menu-element" id="navAwards">Премії</span>
       </div>
-      <i class="fa-solid fa-magnifying-glass nav-search"></i>
+      <div class="nav-search" id="navSearch">
+        <div id="navSearchBlock">
+          <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+          <input
+            type="text"
+            placeholder="Пошук інформації"
+            id="navSearchInput"
+          />
+        </div>
+      </div>
     </nav>
+    <button class="up-btn" style="visibility: hidden; opacity: 0%" id="upBtn">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <main>
       <div class="enter">
         <div class="enter-text">
-          <h1>
-            “Життя в ім'я науки й України” <span
-              >(з нагоди 180-річчя із дня народження Івана Пулюя, видатного
-              фізика та електротехніка України)</span
-            >
-          </h1>
+          <h1>“Життя в ім'я науки й України”</h1>
+          <span
+            >(з нагоди 180-річчя із дня народження Івана Пулюя, видатного фізика
+            та електротехніка України)</span
+          >
           <p>
             Іван Пулюя (1845-1918) - український та австро-угорський фізик та
             електротехнік, організатор науки, громадський діяч. Відомий
