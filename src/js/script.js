@@ -118,16 +118,22 @@ navSearchInput.addEventListener("input", () => {
         if (spans.length) {
           if (selected === spans.length) {
             // clear highlight
-            const hightLightSpan = document.querySelector(".selectedHighlight");
-            hightLightSpan.classList.remove("selectedHighlight");
-            hightLightSpan.style.backgroundColor = "";
+            try {
+              const hightLightSpan =
+                document.querySelector(".selectedHighlight");
+              hightLightSpan.classList.remove("selectedHighlight");
+              hightLightSpan.style.backgroundColor = "";
+            } catch (error) {}
             selected = 1;
             setFirstSelected(selected, spans, true);
           } else {
             // clear highlight
-            const hightLightSpan = document.querySelector(".selectedHighlight");
-            hightLightSpan.classList.remove("selectedHighlight");
-            hightLightSpan.style.backgroundColor = "";
+            try {
+              const hightLightSpan =
+                document.querySelector(".selectedHighlight");
+              hightLightSpan.classList.remove("selectedHighlight");
+              hightLightSpan.style.backgroundColor = "";
+            } catch (error) {}
             selected += 1;
             if (selected >= 10) {
               document.getElementById("navSearchBlock").style.display = "flex";
@@ -163,9 +169,12 @@ navSearchInput.addEventListener("input", () => {
             scrollToElem(lastElementSpan, 15);
           } else {
             // *clear highlight
-            const hightLightSpan = document.querySelector(".selectedHighlight");
-            hightLightSpan.classList.remove("selectedHighlight");
-            hightLightSpan.style.backgroundColor = "";
+            try {
+              const hightLightSpan =
+                document.querySelector(".selectedHighlight");
+              hightLightSpan.classList.remove("selectedHighlight");
+              hightLightSpan.style.backgroundColor = "";
+            } catch (error) {}
             selected -= 1;
             if (selected >= 10) {
               document.getElementById("navSearchBlock").style.display = "flex";
