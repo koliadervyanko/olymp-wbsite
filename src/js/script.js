@@ -125,6 +125,12 @@ navSearchInput.addEventListener("input", () => {
             // clear highlight
             clearSelectedHighlight();
             selected += 1;
+            if (selected >= 10) {
+              document.getElementById("navSearchBlock").style.display = "flex";
+              document.getElementById("navSearchBlock").style.gap = "4px";
+              document.getElementById("navSearchBlock").style.alignItems =
+                "center";
+            }
             // use selected - 1 because array counts from 0
             const currentElementSpan = spans[selected - 1];
             if (currentElementSpan) {
@@ -142,16 +148,27 @@ navSearchInput.addEventListener("input", () => {
             setCount(selected, spans);
             // set last element
             const lastElementSpan = spans[spans.length - 1];
-            // todo
-            clearSelectedHighlight();
+            const hightLightSpan = document.querySelector(".selectedHighlight");
+            try {
+              hightLightSpan.classList.remove("selectedHighlight");
+              hightLightSpan.style.backgroundColor = "";
+            } catch (error) {}
             if (lastElementSpan) {
               setSelected(lastElementSpan);
             }
             scrollToElem(lastElementSpan, 15);
           } else {
             // *clear highlight
-            clearSelectedHighlight();
+            const hightLightSpan = document.querySelector(".selectedHighlight");
+            hightLightSpan.classList.remove("selectedHighlight");
+            hightLightSpan.style.backgroundColor = "";
             selected -= 1;
+            if (selected >= 10) {
+              document.getElementById("navSearchBlock").style.display = "flex";
+              document.getElementById("navSearchBlock").style.gap = "4px";
+              document.getElementById("navSearchBlock").style.alignItems =
+                "center";
+            }
             // use selected - 1 because array counts from 0
             const currentElementSpan = spans[selected - 1];
             if (currentElementSpan) {
