@@ -66,24 +66,24 @@ navSearchInput.addEventListener("input", () => {
     "gi"
   );
   let elements = [];
-  let spans =
-    // highlight
-    elementsToSearch.forEach((element) => {
-      const text = element.textContent;
-      let newText = text.replace(
-        searchRegex,
-        `<span class="highlight" style="font-weight: ${
-          window.getComputedStyle(element).fontWeight
-        };font-size: ${window.getComputedStyle(element).fontSize}">$&</span>`
-      );
-      element.innerHTML = newText;
-      if (element.innerHTML.includes('class="highlight"')) {
-        elements.push(element);
-      }
-    });
+  let spans = [];
+  let selected = 1;
+  // highlight
+  elementsToSearch.forEach((element) => {
+    const text = element.textContent;
+    let newText = text.replace(
+      searchRegex,
+      `<span class="highlight" style="font-weight: ${
+        window.getComputedStyle(element).fontWeight
+      };font-size: ${window.getComputedStyle(element).fontSize}">$&</span>`
+    );
+    element.innerHTML = newText;
+    if (element.innerHTML.includes('class="highlight"')) {
+      elements.push(element);
+    }
+  });
   spans = document.querySelectorAll("span.highlight");
   // create arrow and count
-  let selected = 1;
   if (!created) {
     created = true;
     setTimeout(() => {
@@ -116,33 +116,20 @@ navSearchInput.addEventListener("input", () => {
     if (created) {
       arrowDown.addEventListener("click", () => {
         if (spans.length) {
-          // todo
           if (selected === spans.length) {
             // clear highlight
-            const highlighted = document.querySelector(".selectedHighlight");
-            if (highlighted) {
-              highlighted.classList.remove("selectedHighlight");
-              highlighted.style.backgroundColor = "";
-            }
+            clearSelectedHighlight();
             selected = 1;
             setFirstSelected(selected, spans, true);
           } else {
             // clear highlight
-            const highlighted = document.querySelector(".selectedHighlight");
-            if (highlighted) {
-              highlighted.classList.remove("selectedHighlight");
-              highlighted.style.backgroundColor = "";
-            }
-
+            clearSelectedHighlight();
             selected += 1;
             // use selected - 1 because array counts from 0
             const currentElementSpan = spans[selected - 1];
             if (currentElementSpan) {
               setCount(selected, spans);
-
-              currentElementSpan.classList.add("selectedHighlight");
-              currentElementSpan.style.backgroundColor = "orange";
-
+              setSelected(currentElementSpan);
               scrollToElem(currentElementSpan, 15);
             }
           }
@@ -202,7 +189,6 @@ function clearHighlights() {
 }
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    // Your code to handle the Escape key press goes here
     navSearchInput.blur();
     navSearchInput.value = "";
     clearHighlights();
