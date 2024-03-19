@@ -1,13 +1,4 @@
 // todo: on click on search icon
-import {
-  clearSelectedHighlight,
-  hideHint,
-  setCount,
-  setFirstSelected,
-  setSelected,
-} from "./functions.js";
-import { scrollToElem } from "./functions.js";
-const navBiography = document.getElementById("navBiography");
 const body = document.querySelector("body");
 const hint = document.getElementById("hint");
 const navSearchInput = document.getElementById("navSearchInput");
@@ -110,6 +101,11 @@ navSearchInput.addEventListener("input", () => {
   if (created) {
     setCount(selected, spans);
   }
+  if (selected >= 100) {
+    document.getElementById("navSearchBlock").style.display = "flex";
+    document.getElementById("navSearchBlock").style.gap = "4px";
+    document.getElementById("navSearchBlock").style.alignItems = "center";
+  }
   // set first element
   setFirstSelected(selected, spans, false);
   setTimeout(() => {
@@ -141,6 +137,7 @@ navSearchInput.addEventListener("input", () => {
               document.getElementById("navSearchBlock").style.alignItems =
                 "center";
             }
+
             // use selected - 1 because array counts from 0
             const currentElementSpan = spans[selected - 1];
             if (currentElementSpan) {

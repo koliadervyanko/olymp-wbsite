@@ -1,6 +1,3 @@
-import { scrollToElem } from "./functions.js";
-
-const navBiography = document.getElementById("navBiography");
 const biographyTitle = document.getElementById("biographyTitle");
 const biographyEducationTitle = document.getElementById(
   "biographyEducationTitle"
